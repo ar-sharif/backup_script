@@ -1,0 +1,28 @@
+{
+  "projects": [
+    {
+      "path": "path",
+      "timing": "",
+      "target_path": "target_path",
+      "target_ip": "ip",
+      "target_user": "user",
+      "target_password": "password"
+    },
+    {
+      "path": "path",
+      "timing": "",
+      "target_path": "target_path",
+      "target_ip": "ip",
+      "target_user": "user",
+      "target_password": "password"
+    },
+    {
+      "path": "path",
+      "timing": "",
+      "target_path": "target_path",
+      "target_ip": "ip",
+      "target_user": "user",
+      "target_password": "password"
+    }
+  ]
+}
