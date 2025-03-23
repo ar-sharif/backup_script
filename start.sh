@@ -18,4 +18,13 @@ jq -c '.projects[]' config.json | while read -r i; do
     print_message "setting ssh for backup process $name"
 
     ./set_ssh.sh $target_ip $target_user $target_password $name
+
+    print_message "ssh setting done for backup process $name"
+
+    print_message "setting crontab for backup process $name"
+
+    cat <(crontab -l) <(echo "$timing $(pwd)/sender.sh $path $target_path $target_ip $target_user") | crontab -
+
+    print_message "crontab setting done for backup process $name"
+
 done
