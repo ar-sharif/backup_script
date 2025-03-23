@@ -1,6 +1,7 @@
 {
   "projects": [
     {
+      "name": "backup_1",
       "path": "path",
       "timing": "",
       "target_path": "target_path",
@@ -9,6 +10,7 @@
       "target_password": "password"
     },
     {
+      "name": "backup_2",
       "path": "path",
       "timing": "",
       "target_path": "target_path",
@@ -17,6 +19,7 @@
       "target_password": "password"
     },
     {
+      "name": "backup_3",
       "path": "path",
       "timing": "",
       "target_path": "target_path",
