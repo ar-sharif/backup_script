@@ -4,7 +4,7 @@ source ./utils/print_message.sh
 source ./utils/char_remover.sh
 
 echo 'script starting ...'
-chmod +x set_ssh.sh set_cronjobs.sh
+chmod +x set_ssh.sh sender.sh
 
 if [ ! -f "config.json" ]; then
     echo "Error: config.json not found!"
@@ -20,14 +20,27 @@ jq -c '.projects[]' config.json | while read -r i; do
     target_user=$(char_remover "$(echo "$i" | jq -c '.target_user')" '"')
     target_password=$(char_remover "$(echo "$i" | jq -c '.target_password')" '"')
 
-    print_message "Setting SSH for backup process $name (IP: $target_ip)"
+    # print_message "Setting SSH for backup process $name (IP: $target_ip)"
 
-    ./set_ssh.sh "$target_ip" "$target_user" "$target_password" "$name" "$target_path"
+    # ./set_ssh.sh "$target_ip" "$target_user" "$target_password" "$name" "$target_path"
+
+    # if [ $? -eq 0 ]; then
+    #     print_message "SSH setting done for backup process $name"
+    # else
+    #     print_message "Error: SSH setup failed for $name"
+    # fi
+
+    print_message "Setting crontabs for backup process $name (IP: $target_ip)"
+
+    crontab -l | {
+        cat
+        echo "$timing $(pwd)/sender.sh $target_user $target_ip $target_path $path $name $(pwd)"
+    } | crontab -
 
     if [ $? -eq 0 ]; then
-        print_message "SSH setting done for backup process $name"
+        print_message "crontabs setting done for backup process $name"
     else
-        print_message "Error: SSH setup failed for $name"
+        print_message "Error: crontabs setup failed for $name"
     fi
 
 done
