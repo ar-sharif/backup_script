@@ -20,15 +20,15 @@ jq -c '.projects[]' config.json | while read -r i; do
     target_user=$(char_remover "$(echo "$i" | jq -c '.target_user')" '"')
     target_password=$(char_remover "$(echo "$i" | jq -c '.target_password')" '"')
 
-    # print_message "Setting SSH for backup process $name (IP: $target_ip)"
+    print_message "Setting SSH for backup process $name (IP: $target_ip)"
 
-    # ./set_ssh.sh "$target_ip" "$target_user" "$target_password" "$name" "$target_path"
+    ./set_ssh.sh "$target_ip" "$target_user" "$target_password" "$name" "$target_path"
 
-    # if [ $? -eq 0 ]; then
-    #     print_message "SSH setting done for backup process $name"
-    # else
-    #     print_message "Error: SSH setup failed for $name"
-    # fi
+    if [ $? -eq 0 ]; then
+        print_message "SSH setting done for backup process $name"
+    else
+        print_message "Error: SSH setup failed for $name"
+    fi
 
     print_message "Setting crontabs for backup process $name (IP: $target_ip)"
 

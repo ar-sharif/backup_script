@@ -31,5 +31,4 @@ if ! grep -q "Host $4" "${base_path}config"; then
     printf "Host %s\n   HostName %s\n   PreferredAuthentications publickey\n   IdentityFile %s%s\n" "$4" "$1" "$base_path" "$4" >>"${base_path}config"
 fi
 
-# verfiy path for creating folder
-ssh -i "${base_path}$4" "$2@$1" "sudo -S mkdir -p $5/$4"
+ssh -i "${base_path}$4" "$2@$1" "mkdir -p $5" </dev/null
