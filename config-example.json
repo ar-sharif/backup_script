@@ -1,31 +1,31 @@
 {
   "projects": [
     {
-      "name": "backup_1",
-      "path": "path",
-      "timing": "",
-      "target_path": "target_path",
-      "target_ip": "ip",
-      "target_user": "user",
-      "target_password": "password"
+      "name": "your_backup_name and it must be unique",
+      "path": "/your_path/username/backup/bk2",
+      "timing": "* * * * * ",
+      "target_path": "/your_server_path/backup/bk1",
+      "target_ip": "1.11.111.111",
+      "target_user": "root",
+      "target_password": "your_server_password"
     },
     {
-      "name": "backup_2",
-      "path": "path",
-      "timing": "",
-      "target_path": "target_path",
-      "target_ip": "ip",
-      "target_user": "user",
-      "target_password": "password"
+      "name": "your_backup_name and it must be unique",
+      "path": "/your_path/username/backup/bk2",
+      "timing": "* * * * * ",
+      "target_path": "/your_server_path/backup/bk1",
+      "target_ip": "1.11.111.111",
+      "target_user": "root",
+      "target_password": "your_server_password"
     },
     {
-      "name": "backup_3",
-      "path": "path",
-      "timing": "",
-      "target_path": "target_path",
-      "target_ip": "ip",
-      "target_user": "user",
-      "target_password": "password"
+      "name": "your_backup_name and it must be unique",
+      "path": "/your_path/username/backup/bk2",
+      "timing": "* * * * * ",
+      "target_path": "/your_server_path/backup/bk1",
+      "target_ip": "1.11.111.111",
+      "target_user": "root",
+      "target_password": "your_server_password"
     }
   ],
   "ssh_encryption_algoritm": "ed25519",
