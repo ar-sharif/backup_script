@@ -7,7 +7,7 @@ path="$4"
 name="$5"
 project_path="$6"
 
-exec >"/home/sharif/BashProjects/backup/logs/${5}_$(date +'%Y-%m-%d_%H-%M-%S').log" 2>&1
+# exec >"/home/sharif/BashProjects/backup/logs/${5}_$(date +'%Y-%m-%d_%H-%M-%S').log" 2>&1
 
 tmp_dir="$project_path/.tmp/$name"
 mkdir -p "$tmp_dir" || {
